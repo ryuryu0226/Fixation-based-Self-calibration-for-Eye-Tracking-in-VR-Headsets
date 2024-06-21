@@ -1,0 +1,23 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# OS files
+.DS_Store
+.DS_Store?
+
+# Settings
+.idea/
+.vscode/
+
+# Log files
+nohup.out
