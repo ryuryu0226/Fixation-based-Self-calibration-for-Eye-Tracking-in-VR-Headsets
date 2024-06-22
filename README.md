@@ -9,6 +9,8 @@ This repository contains the code for the paper "Fixation-based Self-calibration
 ```text
 ./notebooks                     # Jupyter notebooks for the experiments
    ├──data                      # Data used in the experiments
-   └──precalibration            # Pre-calibration for the experiments
+   ├──param                     # Parameters for the optimization
+   ├──precalibration            # Pre-calibration for the experiments
+   └──user_analysis             # Visualization of the participants' gaze data
 ./src                           # Modules
 ```
