@@ -3,7 +3,8 @@ This repository contains the code for the paper "Fixation-based Self-calibration
 
 ## Setup
 1. Clone the repository
-2. Install the required packages using `pip install -r requirements.txt`
+2. Create a virtual environment using `python -m venv .venv`
+3. Install the required packages using `pip install -r requirements.txt`
 
 ## Directory Structure
 ```text
