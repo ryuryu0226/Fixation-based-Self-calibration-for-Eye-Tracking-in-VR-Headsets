@@ -133,5 +133,32 @@ class EvaluateGaze:
                           [0.0, np.cos(beta), np.sin(beta)],
                           [0.0, -np.sin(beta), np.cos(beta)]])
 
-        # rotation matrix
+        # return rotation matrix
         return np.dot(y_rot, x_rot)
+
+    @staticmethod
+    def get_rotation_inv(param: List[float]) -> np.ndarray:
+        """
+        Get the inverse rotation matrix.
+
+        :param param: List of float parameters for the rotation matrix.
+        :return: Numpy array representing the inverse rotation matrix.
+        """
+        # convert degree to radian
+        alpha = np.deg2rad(param[0])
+        beta = np.deg2rad(param[1])
+
+        # horizontal rotation
+        y_rot = np.array([[np.cos(alpha), 0.0, np.sin(alpha)],
+                          [0.0, 1.0, 0.0],
+                          [-np.sin(alpha), 0.0, np.cos(alpha)]])
+        y_rot_inv = np.linalg.inv(y_rot)
+
+        # vertical rotation
+        x_rot = np.array([[1.0, 0.0, 0.0],
+                          [0.0, np.cos(beta), np.sin(beta)],
+                          [0.0, -np.sin(beta), np.cos(beta)]])
+        x_rot_inv = np.linalg.inv(x_rot)
+
+        # return inverse rotation matrix
+        return np.dot(y_rot_inv, x_rot_inv)
