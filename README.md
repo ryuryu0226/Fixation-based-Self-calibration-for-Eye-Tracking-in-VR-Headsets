@@ -1,5 +1,5 @@
 # Fixation-based Self-calibration for Eye Tracking in VR Headsets
-This repository contains the code for the paper "Fixation-based Self-calibration for Eye Tracking in VR Headsets".
+This repository contains the code and data for the paper "Fixation-based Self-calibration for Eye Tracking in VR Headsets".
 
 ## Setup
 1. Clone the repository
@@ -8,6 +8,7 @@ This repository contains the code for the paper "Fixation-based Self-calibration
 
 ## Directory Structure
 ```text
+./csharp                        # C# sample code for the Unity application
 ./notebooks                     # Jupyter notebooks for the experiments
    ├──data                      # Data used in the experiments
    ├──param                     # Parameters for the optimization
