@@ -10,9 +10,16 @@ This repository contains the code and data for the paper "Fixation-based Self-ca
 ```text
 ./csharp                        # C# sample code for the Unity application
 ./notebooks                     # Jupyter notebooks for the experiments
-   ├──data                      # Data used in the experiments
-   ├──param                     # Parameters for the optimization
-   ├──precalibration            # Pre-calibration for the experiments
-   └──user_analysis             # Visualization of the participants' gaze data
+├── data                        # Experiment data
+│   ├── evaldata                # Evaluation data obtained by gazing at the calibration markers
+│   ├── office_data             # Raw data acquired while walking through the office environment
+│   ├── office_data_opt         # Office data calibrated to optical axis
+│   ├── office_data_vis         # Office data calibrated to visual axis
+│   ├── supermarket_data        # Raw data acquired while walking through the supermarket environment
+│   ├── supermarket_data_opt    # Supermarket data calibrated to optical axis
+│   └── supermarket_data_vis    # Supermarket data calibrated to visual axis
+├── param                       # Parameter data obtained from calibration
+├── precalibration              # Pre-calibration for the experiments
+└── user_analysis               # Visualization of the participants' gaze data
 ./src                           # Modules
 ```
