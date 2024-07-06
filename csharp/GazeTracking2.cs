@@ -46,12 +46,12 @@ public class GazeTracking2 : MonoBehaviour
         }
 
         string[] header_array = {"flag", "xl", "yl", "zl", "xr", "yr", "zr", "xc", "yc", "zc", // gaze position in HMD coordinate
-                        "mat_00", "mat_10", "mat_20", "mat_30", "mat_01", "mat_11", "mat_21", "mat_31", // WorldToCamera Matrix
-                        "mat_02", "mat_12", "mat_22", "mat_32", "mat_03", "mat_13", "mat_23", "mat_33",
-                        "ctw_00", "ctw_10", "ctw_20", "ctw_30", "ctw_01", "ctw_11", "ctw_21", "ctw_31", // CameraToWorld Matrix
-                        "ctw_02", "ctw_12", "ctw_22", "ctw_32", "ctw_03", "ctw_13", "ctw_23", "ctw_33",
-                        "opennessl", "opennessr", "ray_x", "ray_y", "ray_z", "eye_x", "eye_y", "eye_z", // gaze direction and eye position in HMD coordinate
-                        "time", "frame"};
+                                "mat_00", "mat_10", "mat_20", "mat_30", "mat_01", "mat_11", "mat_21", "mat_31", // WorldToCamera Matrix
+                                "mat_02", "mat_12", "mat_22", "mat_32", "mat_03", "mat_13", "mat_23", "mat_33",
+                                "ctw_00", "ctw_10", "ctw_20", "ctw_30", "ctw_01", "ctw_11", "ctw_21", "ctw_31", // CameraToWorld Matrix
+                                "ctw_02", "ctw_12", "ctw_22", "ctw_32", "ctw_03", "ctw_13", "ctw_23", "ctw_33",
+                                "opennessl", "opennessr", "ray_x", "ray_y", "ray_z", "eye_x", "eye_y", "eye_z", // gaze direction and eye position in HMD coordinate
+                                "time", "frame"};
         string header = string.Join(",", header_array);
         sw.WriteLine(header);
     }
