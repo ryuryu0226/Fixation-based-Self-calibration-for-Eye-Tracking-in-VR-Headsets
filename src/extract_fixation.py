@@ -3,7 +3,7 @@ import pandas as pd
 import itertools
 
 
-class FixationDetection:
+class ExtractFixation:
 
     def __init__(self):
         # Format data
