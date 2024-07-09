@@ -18,8 +18,10 @@ This repository contains the code and data for the paper "Fixation-based Self-ca
 │   ├── supermarket_data        # Raw data acquired while walking through the supermarket environment
 │   ├── supermarket_data_opt    # Supermarket data calibrated to optical axis
 │   └── supermarket_data_vis    # Supermarket data calibrated to visual axis
+├── figures                     # Experimental results
 ├── param                       # Parameter data obtained from calibration
 ├── precalibration              # Pre-calibration for the experiments
+├── result_graph                # Evaluation of our self-calibration method
 └── user_analysis               # Visualization of the participants' gaze data
 ./src                           # Modules
 ```

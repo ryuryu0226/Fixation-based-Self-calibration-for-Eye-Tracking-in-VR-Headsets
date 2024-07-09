@@ -21,3 +21,7 @@ venv/
 
 # Log files
 nohup.out
+
+# Figures
+notebooks/figures/*
+!notebooks/figures/.gitkeep
