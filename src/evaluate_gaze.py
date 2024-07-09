@@ -1,6 +1,6 @@
 from typing import List, Tuple
 import numpy as np
-
+import pandas as pd
 
 class EvaluateGaze:
     def __init__(self):
@@ -162,3 +162,33 @@ class EvaluateGaze:
 
         # return inverse rotation matrix
         return np.dot(y_rot_inv, x_rot_inv)
+    
+    @staticmethod
+    def get_absolute_error(gaze_data_path, param_base, param):
+        # load data
+        df = pd.read_csv(gaze_data_path)
+        # gaze direction
+        ray_x = df["ray_x"].values
+        ray_y = df["ray_y"].values
+        ray_z = df["ray_z"].values
+        # gaze direction at z=1
+        xe = ray_x[:] / ray_z[:] * 1.0
+        ye = ray_y[:] / ray_z[:] * 1.0
+        # marker position on a calibration plane at 1m away (HMD coordinates)
+        p = df["u"].values
+        q = df["v"].values
+        # origin (HMD coordinates)
+        eye_x = df["eye_x"].values
+        eye_y = df["eye_y"].values
+        eye_z = df["eye_z"].values
+        
+        # calibrate gaze direction
+        calib_xe, calib_ye = EvaluateGaze.calibrate_reg(param_base, xe, ye)
+        r = np.sqrt(calib_xe * calib_xe + calib_ye * calib_ye + 1)
+        base_ray = np.stack([calib_xe/r, calib_ye/r, 1/r], axis=1)
+        
+        # 精度評価
+        rmse_error = EvaluateGaze.err_rmse_3d(param, base_ray, eye_x, eye_y, eye_z, p, q)
+        absolute_error = np.rad2deg(rmse_error)
+
+        return absolute_error
