@@ -2,6 +2,7 @@ from typing import List, Tuple
 import numpy as np
 import pandas as pd
 
+
 class EvaluateGaze:
     def __init__(self):
         pass
@@ -48,8 +49,8 @@ class EvaluateGaze:
 
     @staticmethod
     def err_rmse_reg(param: List[float], xe: np.ndarray, ye: np.ndarray,
-                    eye_x: np.ndarray, eye_y: np.ndarray, eye_z: np.ndarray,
-                    p: np.ndarray, q: np.ndarray) -> float:
+                     eye_x: np.ndarray, eye_y: np.ndarray, eye_z: np.ndarray,
+                     p: np.ndarray, q: np.ndarray) -> float:
         """
         Calculate the square error using regression model.
 
@@ -79,8 +80,8 @@ class EvaluateGaze:
 
     @staticmethod
     def err_rmse_3d(param: List[float], ray: np.ndarray,
-                   eye_x: np.ndarray, eye_y: np.ndarray, eye_z: np.ndarray,
-                   p: np.ndarray, q: np.ndarray) -> float:
+                    eye_x: np.ndarray, eye_y: np.ndarray, eye_z: np.ndarray,
+                    p: np.ndarray, q: np.ndarray) -> float:
         """
         Calculate the square error using 3D eye model.
 
@@ -162,9 +163,19 @@ class EvaluateGaze:
 
         # return inverse rotation matrix
         return np.dot(y_rot_inv, x_rot_inv)
-    
+
     @staticmethod
-    def get_absolute_error(gaze_data_path, param_base, param):
+    def get_absolute_error(gaze_data_path: str,
+                           param_base: np.ndarray,
+                           param: np.ndarray) -> float:
+        """
+        Calculate the absolute error.
+
+        :param gaze_data_path: File path of the gaze data.
+        :param param_base: Numpy array representing the visual axis parameters.
+        :param param: Numpy array representing the calibration parameters.
+        :return: float value representing the absolute error.
+        """
         # load data
         df = pd.read_csv(gaze_data_path)
         # gaze direction
@@ -181,12 +192,12 @@ class EvaluateGaze:
         eye_x = df["eye_x"].values
         eye_y = df["eye_y"].values
         eye_z = df["eye_z"].values
-        
+
         # calibrate gaze direction
         calib_xe, calib_ye = EvaluateGaze.calibrate_reg(param_base, xe, ye)
         r = np.sqrt(calib_xe * calib_xe + calib_ye * calib_ye + 1)
-        base_ray = np.stack([calib_xe/r, calib_ye/r, 1/r], axis=1)
-        
+        base_ray = np.stack([calib_xe / r, calib_ye / r, 1 / r], axis=1)
+
         # 精度評価
         rmse_error = EvaluateGaze.err_rmse_3d(param, base_ray, eye_x, eye_y, eye_z, p, q)
         absolute_error = np.rad2deg(rmse_error)
