@@ -21,7 +21,7 @@ This repository contains the code and data for the paper "Fixation-based Self-ca
 ├── figures                             # Experimental results
 ├── param                               # Parameter data
 │   ├── exp_distance                    # Data for evaluating convergence performance
-│   ├── exp_init_parameter              # Data for evaluating dependence on initial parameters
+│   ├── exp_init_param                  # Data for evaluating dependence on initial parameters
 │   ├── idt_07deg_160ms_opt             # Parameters obtained by I-DT (opt)
 │   ├── idt_07deg_160ms_vis             # Parameters obtained by I-DT (vis)
 │   ├── ivdt_80deg_07deg_160ms_opt      # Parameters obtained by I-VDT (opt)
