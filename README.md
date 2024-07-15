@@ -1,5 +1,9 @@
 # Fixation-based Self-calibration for Eye Tracking in VR Headsets
-This repository contains the code and data for the paper "Fixation-based Self-calibration for Eye Tracking in VR Headsets".
+This repository contains the data, task code and analysis code for the paper "Fixation-based Self-calibration for Eye Tracking in VR Headsets".
+However, this repository does not include the 3D models used in our experiment, as the models are prohibited for redistribution.
+The 3D models used in our experiment are available
+on Unity AssetStore ([Office Interior Archviz](https://assetstore.unity.com/packages/3d/environments/urban/office-interior-archviz-155701)
+and [Modern Supermarket](https://assetstore.unity.com/packages/3d/environments/modern-supermarket-186122)).
 
 ## Setup
 1. Clone the repository
