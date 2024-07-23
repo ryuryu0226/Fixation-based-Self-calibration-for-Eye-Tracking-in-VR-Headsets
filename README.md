@@ -15,7 +15,7 @@ and [Modern Supermarket](https://assetstore.unity.com/packages/3d/environments/m
 ./csharp                                # C# sample code for the Unity application
 ./notebooks                             # Jupyter notebooks for the experiments
 ├── data                                # Experiment data
-│   ├── eval_data                        # Evaluation data obtained by gazing at the calibration markers
+│   ├── eval_data                       # Evaluation data obtained by gazing at the calibration markers
 │   ├── office_data                     # Raw data acquired while walking through the office environment
 │   ├── office_data_opt                 # Office data calibrated to optical axis
 │   ├── office_data_vis                 # Office data calibrated to visual axis
